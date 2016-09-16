@@ -17,6 +17,9 @@ DigitalOut leds[4] = {
 		DigitalOut(LED4)
 };
 
+#include "EthernetInterface.h" /* from mbed/net/eth */
+#include "HTTPServer.h"
+
 int main() {
 
 	int cnt = 0;
@@ -43,6 +46,16 @@ int main() {
 
 	// Clear the configuration cache as it is no longer needed
 	kernel->config->config_cache_clear();
+
+    // Create the network stack
+    EthernetInterface *eth = new EthernetInterface();
+    eth->init(); // Use DHCP
+    eth->connect();
+
+    // Start web server
+    HTTPServer *server = new HTTPServer();
+    server.bind(HTTP_SERVER_PORT);
+    server.listen();
 
 	// Main loop
 	while(1){
