@@ -2,7 +2,7 @@
 # Can be one of: Smoothie2Proto1 (**current default**)
 #                Bambino210E
 #                Bambino200E
-BOARD ?= Bambino210E
+BOARD ?= Bambino200E
 
 # Set MRI_ENABLE to a value of 1 to enable the MRI debug monitor on the secondary UART.
 MRI_ENABLE ?= 0
