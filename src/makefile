@@ -79,6 +79,7 @@ else
 GCC4MBED_TYPE := Release
 endif
 
+MBED_LIBS := net/eth
 
 include $(GCC4MBED_DIR)/build/gcc4mbed.mk
 

@@ -17,8 +17,8 @@ DigitalOut leds[4] = {
 		DigitalOut(LED4)
 };
 
-#include "EthernetInterface.h" /* from mbed/net/eth */
-#include "HTTPServer.h"
+#include "EthernetInterface/EthernetInterface.h" /* from mbed/net/eth */
+#include "net/HTTPServer.h"
 
 int main() {
 
